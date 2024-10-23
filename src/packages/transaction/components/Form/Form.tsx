@@ -13,7 +13,7 @@ const Form = () => {
   const [tonConnectUI] = useTonConnectUI();
 
   const methods = useForm({
-    defaultValues: { amount: 0, recipient: '' },
+    defaultValues: { amount: undefined, recipient: '' },
   });
 
   const handleFormSubmit = async (data: FormValue) => {

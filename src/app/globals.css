@@ -2,6 +2,7 @@
   /* colors */
   --secondary-color: #2e003e;
   --background-color: linear-gradient(180deg, #121212, #2e003e);
+  --gray-100: #86787860;
 
   --max-width: 1270px;
   --background-gradient: linear-gradient(

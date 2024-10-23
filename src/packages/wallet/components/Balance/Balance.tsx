@@ -25,11 +25,15 @@ export const Balance = (props: IProps) => {
   }, [address, fetchBalanceData]);
 
   return (
-    address && (
-      <div className={styles.wrapper}>
-        <p className={styles.balance}>$ {balance}</p>
-        <p className={styles.caption}>Your balance</p>
-      </div>
-    )
+    <div className={styles.wrapper}>
+      {address ? (
+        <>
+          <p className={styles.balance}>{balance} ton</p>
+          <p className={styles.caption}>Your balance</p>
+        </>
+      ) : (
+        <div className={styles.text}>Please connect to your wallet...</div>
+      )}
+    </div>
   );
 };

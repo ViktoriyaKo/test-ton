@@ -1,0 +1,27 @@
+.wrapper {
+  position: relative;
+}
+
+.caption {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4f4f4f;
+  display: block;
+  padding-block: 4px;
+}
+
+.input {
+  border-radius: 8px;
+  border: 1px solid #d1d1d1;
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 14px;
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+  left: 0;
+  position: absolute;
+  bottom: -16px;
+}

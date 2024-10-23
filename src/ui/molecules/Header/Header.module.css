@@ -17,19 +17,6 @@
   gap: 12px;
 }
 
-.title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border-radius: 20px;
-  font-size: 16px;
-  padding: 5px 12px;
-  background-color: #86787860;
-  width: max-content;
-  font-weight: 400;
-  border: var(--border);
-}
-
 .button {
   display: flex;
   gap: 8px;
@@ -46,4 +33,11 @@
 .button:hover {
   box-shadow: var(--box-shadow);
   transition: all 0.5s;
+}
+
+.back {
+  padding: 10px;
+  background-color: var(--gray-100);
+  rotate: 180deg;
+  border-radius: 50%;
 }

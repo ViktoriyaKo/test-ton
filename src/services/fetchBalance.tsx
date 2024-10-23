@@ -1,4 +1,4 @@
-import ENDPOINTS from '@/constants/routes';
+import ENDPOINTS from '@/constants/endpoints';
 
 export const fetchBalance = async (address: string | null): Promise<number> => {
   if (!address) return 0;

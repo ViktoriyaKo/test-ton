@@ -1,7 +1,8 @@
 'use client';
 import { useTonWallet } from '@tonconnect/ui-react';
 import { Header } from '@/ui/molecules';
-import { Address } from '@/packages/components';
+import { Address } from '@/packages/wallet/components';
+import { WalletIcon } from '@/ui/atoms';
 
 const WalletPage = () => {
   const wallet = useTonWallet();
@@ -9,8 +10,8 @@ const WalletPage = () => {
 
   return (
     <>
-      <Header title={'Wallet'} address={address} />
-      <Address address={address} />      
+      <Header title={'Wallet'} address={address} icon={WalletIcon} />
+      <Address address={address} />
     </>
   );
 };

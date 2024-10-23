@@ -2,6 +2,7 @@ import { Input } from '@/ui/atoms';
 import styles from './Form.module.css';
 import { FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import { useTonConnectUI, useTonWallet } from '@tonconnect/ui-react';
 
 interface FormValue {
   amount: number | null;
@@ -9,6 +10,8 @@ interface FormValue {
 }
 
 const Form = () => {
+  const [tonConnectUI] = useTonConnectUI();
+
   const methods = useForm({
     defaultValues: { amount: 0, recipient: '' },
   });
@@ -25,8 +28,8 @@ const Form = () => {
             },
           ],
         };
+        const id = await tonConnectUI.sendTransaction(transaction);
         toast.success('Transaction was successful!');
-        console.log(transaction);
         methods.reset();
       }
     } catch (err) {

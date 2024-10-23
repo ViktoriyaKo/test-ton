@@ -6,7 +6,6 @@ import { Balance } from '@/packages/wallet/components';
 import { usePathname } from 'next/navigation';
 import { ROUTERS } from '@/constants/routers';
 import Link from 'next/link';
-import { useEffect } from 'react';
 
 interface IProps {
   title: string;

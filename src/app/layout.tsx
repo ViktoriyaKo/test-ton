@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import './globals.css';
-import Provider from '@/Provider/Provider';
+import Provider from '@/providers/Provider';
 import Image from 'next/image';
 import background from '@images/background.png';
 import 'react-toastify/dist/ReactToastify.css';

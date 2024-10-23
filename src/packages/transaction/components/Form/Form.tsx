@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { useTonConnectUI } from '@tonconnect/ui-react';
 
 interface FormValue {
-  amount: number | null;
+  amount: number | undefined;
   recipient: string;
 }
 
@@ -66,7 +66,7 @@ const Form = () => {
         <button
           type={'submit'}
           disabled={
-            !methods.formState.isValid || amount === null || amount <= 0
+            !methods.formState.isValid || amount === undefined || amount <= 0
           }
           className={styles.submit}
         >

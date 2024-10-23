@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Тестовое задание для ECOM
 
-## Getting Started
+[Ссылка на задание](https://docs.google.com/document/d/1g8if8tbBOrjjl2bqFnOP1dxzwGxf-UsdcGSigz8P7qQ/edit?tab=t.0)
 
-First, run the development server:
+## Инструкция
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Создание тестового кошелька
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Перейдите по следующей ссылке для создания тестового кошелька: [wallet.ton.org?testnet=true](https://wallet.ton.org?testnet=true)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. Пополнение тестового кошелька
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Для пополнения кошелька воспользуйтесь Telegram-ботом [@testgiver_ton_bot](https://t.me/testgiver_ton_bot).
+- Следуйте инструкциям бота для получения тестовых токенов.
 
-## Learn More
+### 3. Привязка кошелька на мобильном устройстве
 
-To learn more about Next.js, take a look at the following resources:
+- Скачайте приложение **Tonkeeper** на свой телефон.
+- В настройках приложения привяжите созданный тестовый кошелек.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Привязка кошелька в приложении
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Запустите веб-приложение и привяжите свой кошелек, следуя инструкции на экране.
 
-## Deploy on Vercel
+### 5. Осуществление транзакции
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Перейдите во вкладку **"Transaction"** для выполнения транзакции.
+- Внимание: для просмотра баланса и выполнения транзакций необходимо добавить кошелек.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Примечания
+
+- Тестовый режим (`testnet`) не влияет на реальные средства. Используйте его для безопасного тестирования.
+- Пополнение кошелька через бота и использование тестового кошелька необходимо для выполнения заданий.

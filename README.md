@@ -1,4 +1,4 @@
-# Тестовое задание для ECOM
+# Тестовое задание
 
 [Ссылка на задание](https://docs.google.com/document/d/1g8if8tbBOrjjl2bqFnOP1dxzwGxf-UsdcGSigz8P7qQ/edit?tab=t.0)
 

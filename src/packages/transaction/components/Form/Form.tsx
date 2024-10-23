@@ -2,7 +2,7 @@ import { Input } from '@/ui/atoms';
 import styles from './Form.module.css';
 import { FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { useTonConnectUI, useTonWallet } from '@tonconnect/ui-react';
+import { useTonConnectUI } from '@tonconnect/ui-react';
 
 interface FormValue {
   amount: number | null;

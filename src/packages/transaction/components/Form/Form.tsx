@@ -28,7 +28,7 @@ const Form = () => {
             },
           ],
         };
-        const id = await tonConnectUI.sendTransaction(transaction);
+        await tonConnectUI.sendTransaction(transaction);
         toast.success('Transaction was successful!');
         methods.reset();
       }

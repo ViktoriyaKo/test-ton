@@ -38,3 +38,7 @@
   padding: 8px 13px;
   transition: background-color 0.5s;
 }
+
+.title::-webkit-details-marker {
+  display: none;
+}

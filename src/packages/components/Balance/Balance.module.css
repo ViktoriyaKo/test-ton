@@ -1,0 +1,22 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  max-width: var(--max-width);
+  justify-content: center;
+  flex: 1;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.balance {
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.caption {
+  color: gray;
+}

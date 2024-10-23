@@ -1,0 +1,1 @@
+export { fetchBalance } from './fetchBalance';

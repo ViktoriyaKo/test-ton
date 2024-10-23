@@ -1,19 +1,73 @@
 :root {
+  /* colors */
+  --secondary-color: #2e003e;
+  --background-color: linear-gradient(180deg, #121212, #2e003e);
+
+  --max-width: 1270px;
+  --background-gradient: linear-gradient(
+    310deg,
+    #292929 37%,
+    #4f4f4f 48%,
+    #555259 0,
+    #5e5d5d89 57%
+  );
+
+  /* borders */
+  --border: 1px solid #555259;
+
+  --box-shadow: 0 0px 8px 0 white;
 }
 
 html,
 body {
-  max-width: 100vw;
+  position: relative;
   overflow-x: hidden;
+  height: 100%;
+  font-family: var(--font-montserrat);
+  background-color: #121212;
+  color: white;
+  z-index: 1;
+}
+
+.background {
+  min-height: 80vh;
+  z-index: -1;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  color: inherit;
+}
+
+button,
+[role='button'] {
+  cursor: pointer;
+  font-family: inherit;
+  background-color: transparent;
+  border: none;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+ol,
+ul,
+menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
 }

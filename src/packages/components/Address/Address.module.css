@@ -1,0 +1,25 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 200px 20px;
+  z-index: 10;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.caption {
+  color: gray;
+  padding-bottom: 12px;
+}
+
+.address {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.address span {
+  word-wrap: break-all;
+  overflow-wrap: anywhere;
+}

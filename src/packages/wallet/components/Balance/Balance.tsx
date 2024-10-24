@@ -28,8 +28,8 @@ export const Balance = (props: IProps) => {
     <div className={styles.wrapper}>
       {address ? (
         <>
-          {balance !== null && (
-            <p className={styles.balance}>{balance.toFixed(9)} ton</p>
+          {balance !== null && !isNaN(balance) && (
+            <p className={styles.balance}>${balance.toFixed(9)} TON</p>
           )}
           <p className={styles.caption}>Your balance</p>
         </>

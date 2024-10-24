@@ -42,7 +42,7 @@ const Header = () => {
           </button>
         )}
       </nav>
-      <Balance address={address} />
+      <Balance />
     </header>
   );
 };

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import background from '@images/background.png';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { Header } from '@/ui/molecules';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default function RootLayout({
             alt="background"
             fill
           />
+          <Header />
           {children}
           <ToastContainer position="top-center" theme="dark" />
         </body>

@@ -1,19 +1,11 @@
 'use client';
-import { useTonWallet } from '@tonconnect/ui-react';
-import { Header } from '@/ui/molecules';
 import { Address } from '@/packages/wallet/components';
-import { WalletIcon } from '@/ui/atoms';
+import { useWalletContext } from '@/contexts/WalletContext';
 
 const WalletPage = () => {
-  const wallet = useTonWallet();
-  const address = wallet?.account.address;
+  const { address } = useWalletContext();
 
-  return (
-    <>
-      <Header title={'Wallet'} address={address} icon={WalletIcon} />
-      <Address address={address} />
-    </>
-  );
+  return <Address address={address} />;
 };
 
 export default WalletPage;

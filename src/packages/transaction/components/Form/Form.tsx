@@ -3,6 +3,9 @@ import styles from './Form.module.css';
 import { FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { useTonConnectUI } from '@tonconnect/ui-react';
+import { useCallback, useEffect } from 'react';
+import { fetchBalance } from '@/services';
+import { useWalletContext } from '@/contexts/WalletContext';
 
 interface FormValue {
   amount: number | undefined;
@@ -11,10 +14,39 @@ interface FormValue {
 
 const Form = () => {
   const [tonConnectUI] = useTonConnectUI();
+  const { address, setBalance } = useWalletContext();
 
   const methods = useForm({
-    defaultValues: { amount: undefined, recipient: '' },
+    defaultValues: { amount: 0, recipient: '' },
   });
+
+  const updateBalance = useCallback(async () => {
+    if (!address) return;
+
+    const fetchedBalance = await fetchBalance(address);
+    setBalance(fetchedBalance);
+  }, [address, setBalance]);
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const handleTransactionSent = (event: any) => {
+      if (event.detail.is_success) {
+        toast.success('Transaction was successful!');
+      }
+    };
+
+    window.addEventListener(
+      'ton-connect-ui-transaction-signed',
+      handleTransactionSent
+    );
+
+    return () => {
+      window.removeEventListener(
+        'ton-connect-ui-transaction-signed',
+        handleTransactionSent
+      );
+    };
+  }, [setBalance]);
 
   const handleFormSubmit = async (data: FormValue) => {
     try {
@@ -29,9 +61,10 @@ const Form = () => {
           ],
         };
         await tonConnectUI.sendTransaction(transaction);
-        toast.success('Transaction was successful!');
+        setTimeout(async () => {
+          await updateBalance();
+        }, 8000);
         methods.reset();
-        methods.setValue('amount', undefined);
       }
     } catch (err) {
       toast.error('Transaction failed');

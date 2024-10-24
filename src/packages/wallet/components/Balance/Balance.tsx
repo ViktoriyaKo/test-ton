@@ -1,22 +1,18 @@
-import { useCallback, useEffect, useState } from 'react';
+/* eslint-disable react/display-name */
+import { useCallback, useEffect } from 'react';
 import styles from './Balance.module.css';
 import { fetchBalance } from '@/services';
+import { useWalletContext } from '@/contexts/WalletContext';
 
-interface IProps {
-  address: string | null | undefined;
-}
-
-export const Balance = (props: IProps) => {
-  const { address } = props;
-
-  const [balance, setBalance] = useState<number | null>(null);
+export const Balance = () => {
+  const { address, balance, setBalance } = useWalletContext();
 
   const fetchBalanceData = useCallback(async () => {
     if (!address) return;
 
     const fetchedBalance = await fetchBalance(address);
     setBalance(fetchedBalance);
-  }, [address]);
+  }, [address, setBalance]);
 
   useEffect(() => {
     if (address) {

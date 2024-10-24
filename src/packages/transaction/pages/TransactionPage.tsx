@@ -1,21 +1,13 @@
 'use client';
 
-import { Header } from '@/ui/molecules';
-import { useTonWallet } from '@tonconnect/ui-react';
-import { TransactionIcon } from '@/ui/atoms';
 import { Form } from '../components';
 import styles from '../styles/TransactionPage.module.css';
+import { useWalletContext } from '@/contexts/WalletContext';
 
 const TransactionPage = () => {
-  const wallet = useTonWallet();
-  const address = wallet?.account.address;
+  const { address } = useWalletContext();
 
-  return (
-    <section className={styles.container}>
-      <Header title={'Transaction'} address={address} icon={TransactionIcon} />
-      {address && <Form />}
-    </section>
-  );
+  return <section className={styles.container}>{address && <Form />}</section>;
 };
 
 export default TransactionPage;

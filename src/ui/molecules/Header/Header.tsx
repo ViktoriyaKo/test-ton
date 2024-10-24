@@ -6,20 +6,16 @@ import { Balance } from '@/packages/wallet/components';
 import { usePathname } from 'next/navigation';
 import { ROUTERS } from '@/constants/routers';
 import Link from 'next/link';
+import { useWalletContext } from '@/contexts/WalletContext';
 
-interface IProps {
-  title: string;
-  icon: string;
-  address: string | null | undefined;
-}
-
-const Header = (props: IProps) => {
-  const { title, address, icon } = props;
+const Header = () => {
   const [tonConnectUI] = useTonConnectUI();
+  const { address } = useWalletContext();
 
   const isConnected = !!address;
   const pathname = usePathname();
   const isTransactionPage = pathname.includes(ROUTERS[1].href);
+  const currentPath = ROUTERS.find((router) => router.href === pathname);
 
   return (
     <header className={styles.header}>
@@ -29,7 +25,11 @@ const Header = (props: IProps) => {
             <Icon html={ArrowIcon} />
           </Link>
         )}
-        <Title title={title} hasDropdown={!isTransactionPage} icon={icon} />
+        <Title
+          title={currentPath?.title ?? ''}
+          hasDropdown={!isTransactionPage}
+          icon={currentPath?.icon ?? ''}
+        />
         {!isTransactionPage && (
           <button
             className={styles.button}

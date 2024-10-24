@@ -1,6 +1,7 @@
 'use client';
 
 import ENDPOINTS from '@/constants/endpoints';
+import WalletProvider from '@/contexts/WalletContext';
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
 import { ReactNode } from 'react';
 
@@ -9,7 +10,7 @@ const Provider = (props: { children: ReactNode }) => {
 
   return (
     <TonConnectUIProvider manifestUrl={ENDPOINTS.MANIFEST_URL}>
-      {children}
+      <WalletProvider>{children}</WalletProvider>
     </TonConnectUIProvider>
   );
 };

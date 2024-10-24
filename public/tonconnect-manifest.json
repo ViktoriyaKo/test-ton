@@ -1,5 +1,5 @@
 {
-  "url": "http://localhost:3000",
+  "url": "https://test-ton.vercel.app",
   "name": "test-ton",
-  "iconUrl": "http://localhost:3000/logo.png"
+  "iconUrl": "https://test-ton.vercel.app/logo.png"
 }

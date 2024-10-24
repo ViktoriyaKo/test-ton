@@ -31,6 +31,7 @@ const Form = () => {
         await tonConnectUI.sendTransaction(transaction);
         toast.success('Transaction was successful!');
         methods.reset();
+        methods.setValue('amount', undefined);
       }
     } catch (err) {
       toast.error('Transaction failed');

@@ -28,7 +28,9 @@ export const Balance = (props: IProps) => {
     <div className={styles.wrapper}>
       {address ? (
         <>
-          <p className={styles.balance}>{balance} ton</p>
+          {balance !== null && (
+            <p className={styles.balance}>{balance.toFixed(9)} ton</p>
+          )}
           <p className={styles.caption}>Your balance</p>
         </>
       ) : (

@@ -9,7 +9,7 @@ interface IProps {
 export const Balance = (props: IProps) => {
   const { address } = props;
 
-  const [balance, setBalance] = useState<number>(0);
+  const [balance, setBalance] = useState<number | null>(null);
 
   const fetchBalanceData = useCallback(async () => {
     if (!address) return;

@@ -29,7 +29,7 @@ export const Balance = (props: IProps) => {
       {address ? (
         <>
           {balance !== null && !isNaN(balance) && (
-            <p className={styles.balance}>${balance.toFixed(9)} TON</p>
+            <p className={styles.balance}>{balance.toFixed(9)} TON</p>
           )}
           <p className={styles.caption}>Your balance</p>
         </>
